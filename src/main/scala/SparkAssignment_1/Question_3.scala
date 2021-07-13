@@ -2,6 +2,7 @@ package SparkAssignment_1
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions._
 
 object Question_3 {
 
@@ -19,12 +20,7 @@ object Question_3 {
       .option("inferSchema", "true")
       .csv("src/main/resources/transactions.csv")
 
-    val stored_data = df1.join(df2,df1("UserID") === df2("UserID"),"inner")
-
-
-
-
-
+    df2.groupBy("UserID","Product_ID").agg(sum("Price")).show()
 
   }
 }
