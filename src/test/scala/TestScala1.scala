@@ -1,3 +1,6 @@
-class TestScala1 {
+import org.scalatest.FunSuite
+
+class TestScala1 extends FunSuite{
+
 
 }

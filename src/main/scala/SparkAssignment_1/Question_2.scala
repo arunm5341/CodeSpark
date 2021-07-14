@@ -13,19 +13,14 @@ object Question_2 {
       .option("inferSchema", "true")
       .csv("src/main/resources/users.csv")
 
-   // df1.show()
-
     val df2 = spark.read
       .option("header", "true")
       .option("inferSchema", "true")
       .csv("src/main/resources/transactions.csv")
 
-   // df2.show()
 
-    // df2.dropDuplicates("UserId","Product_ID").show()
+    df2.groupBy("Product_ID","UserID").count().show()
 
-    df2.select("Product_ID","UserID").show()
-
-
+    df2.printSchema()
   }
 }

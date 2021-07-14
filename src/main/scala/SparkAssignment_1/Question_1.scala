@@ -6,6 +6,7 @@ import org.apache.log4j.{Level, Logger}
 
 
 object Question_1 {
+  // a)	Count of unique locations where each product is sold.
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().master("local").appName("Question1").getOrCreate()
     Logger.getLogger("org").setLevel(Level.ERROR)
