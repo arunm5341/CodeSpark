@@ -9,6 +9,7 @@ object Question_3 {
   // c) Total spending done by each user on each product.
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.ERROR)
+
    def x(header: Boolean,inferSchema: Boolean ,path:String):DataFrame ={
      val spark = SparkSession.builder().master("local").appName("Question1").getOrCreate()
      val df1 = spark.read
